@@ -108,26 +108,48 @@ UNET employs data augmentation and regularisation techniques to improve its resi
 
 # UNet Architecture 
 
+<img width="473" alt="image" src="https://github.com/mainak0907/Breast-Tumour-Segementation-UNet_Architecture/assets/88925745/0a94f7c5-2283-41cf-bf24-78f68cecfe23">
+
+
 ## Introduction 
 
 UNET is a fully convolutional neural network (FCN) architecture built for image segmentation applications. It was first proposed in 2015 by Olaf Ronneberger, Philipp Fischer, and Thomas Brox. UNET is frequently utilized for its accuracy in picture segmentation and has become a popular choice in various medical imaging applications. UNET combines an encoding path, also called the contracting path, with a decoding path called the expanding path. The architecture is named after its U-shaped look when depicted in a diagram. Because of this U-shaped architecture, the network can record both local features and global context, resulting in exact segmentation results.
+
+<img width="896" alt="image" src="https://github.com/mainak0907/Breast-Tumour-Segementation-UNet_Architecture/assets/88925745/b690f84b-3cb5-4a4b-89ac-33a34cd6084a">
+
 
 ## Critical Components of the UNET Architecture
 
 ## Contracting Path (Encoding Path):
 UNET’s contracting path comprises convolutional layers followed by max pooling operations. This method captures high-resolution, low-level characteristics by gradually lowering the spatial dimensions of the input image. The channels are doubled after every downsampling operation to compensate for loss of spatial information.
 
+<img width="922" alt="image" src="https://github.com/mainak0907/Breast-Tumour-Segementation-UNet_Architecture/assets/88925745/5fc24e05-1365-4d76-bdd2-5ce28aece906">
+
+
 ## Expanding Path (Decoding Path):
 Transposed convolutions, also known as deconvolutions or upsampling layers, are used for upsampling the feature maps from the encoding path in the UNET expansion path. The feature maps’ spatial resolution is increased during the upsampling phase, allowing the network to reconstitute a dense segmentation map.
+
+<img width="928" alt="image" src="https://github.com/mainak0907/Breast-Tumour-Segementation-UNet_Architecture/assets/88925745/f52cb6a9-cc00-4694-9383-798fd0225c09">
+
 
 ## Skip Connections:
 Skip connections are used in UNET to connect matching layers from encoding to decoding paths. These links enable the network to collect both local and global data. The network retains essential spatial information and improves segmentation accuracy by integrating feature maps from earlier layers with those in the decoding route.
 
+<img width="896" alt="image" src="https://github.com/mainak0907/Breast-Tumour-Segementation-UNet_Architecture/assets/88925745/7bc20659-c7ca-440a-915e-a5842bd5b8b4">
+
+
 ## Concatenation:
 Concatenation is commonly used to implement skip connections in UNET. The feature maps from the encoding path are concatenated with the upsampled feature maps from the decoding path during the upsampling procedure. This concatenation allows the network to incorporate multi-scale information for appropriate segmentation, exploiting high-level context and low-level features.
 
+<img width="611" alt="image" src="https://github.com/mainak0907/Breast-Tumour-Segementation-UNet_Architecture/assets/88925745/b9285627-da38-4607-b6ad-841cd3d31953">
+
+
 ## Fully Convolutional Layers:
 UNET comprises convolutional layers with no fully connected layers. This convolutional architecture enables UNET to handle images of unlimited sizes while preserving spatial information across the network, making it flexible and adaptable to various segmentation tasks.
+
+<img width="888" alt="image" src="https://github.com/mainak0907/Breast-Tumour-Segementation-UNet_Architecture/assets/88925745/9e0b5322-7944-4f46-bf8e-46986723eb94">
+
+This is where the Encoder switches into Decoder 
 
 
 # Deep Dive in the Architecture 
