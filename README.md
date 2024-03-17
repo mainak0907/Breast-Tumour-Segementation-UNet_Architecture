@@ -130,4 +130,20 @@ Concatenation is commonly used to implement skip connections in UNET. The featur
 UNET comprises convolutional layers with no fully connected layers. This convolutional architecture enables UNET to handle images of unlimited sizes while preserving spatial information across the network, making it flexible and adaptable to various segmentation tasks.
 
 
+# Deep Dive in the Architecture 
+
+## Convolutional Layers
+
+The encoding process begins with a set of convolutional layers. Convolutional layers extract information at multiple scales by applying a set of learnable filters to the input image. These filters operate on the local receptive field, allowing the network to catch spatial patterns and minor features. With each convolutional layer, the depth of the feature maps grows, allowing the network to learn more complicated representations.
+
+## Activation Function
+
+Following each convolutional layer, an activation function such as the Rectified Linear Unit (ReLU) is applied element by element to induce non-linearity into the network. The activation function aids the network in learning non-linear correlations between input images and retrieved features.
+
+## Pooling Layers
+
+Pooling layers are used after the convolutional layers to reduce the spatial dimensionality of the feature maps. The operations, such as max pooling, divide feature maps into non-overlapping regions and keep only the maximum value inside each zone. It reduces the spatial resolution by down-sampling feature maps, allowing the network to capture more abstract and higher-level data.
+
+The encoding path’s job is to capture features at various scales and levels of abstraction in a hierarchical manner. The encoding process focuses on extracting global context and high-level information as the spatial dimensions decrease.
+
 
