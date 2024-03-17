@@ -115,7 +115,7 @@ UNET is a fully convolutional neural network (FCN) architecture built for image 
 ## Critical Components of the UNET Architecture
 
 ## Contracting Path (Encoding Path):
-UNET’s contracting path comprises convolutional layers followed by max pooling operations. This method captures high-resolution, low-level characteristics by gradually lowering the spatial dimensions of the input image.
+UNET’s contracting path comprises convolutional layers followed by max pooling operations. This method captures high-resolution, low-level characteristics by gradually lowering the spatial dimensions of the input image. The channels are doubled after every downsampling operation to compensate for loss of spatial information.
 
 ## Expanding Path (Decoding Path):
 Transposed convolutions, also known as deconvolutions or upsampling layers, are used for upsampling the feature maps from the encoding path in the UNET expansion path. The feature maps’ spatial resolution is increased during the upsampling phase, allowing the network to reconstitute a dense segmentation map.
