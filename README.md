@@ -10,6 +10,9 @@
 
 4. Fully Connected Layers: Fully connected layers, also called dense layers, use the retrieved features to complete the final classification or regression operation. They connect every neuron in one layer to every neuron in the next, allowing the network to learn global representations and make high-level judgments based on the previous layers’ combined input.
 
+<img width="533" alt="image" src="https://github.com/mainak0907/Breast-Tumour-Segementation-UNet_Architecture/assets/88925745/74e43f1c-fea6-4ea4-bead-1fe80f12b6e2">
+
+
 ## Need for a Fully Connected Network
 
 Traditional CNNs are generally intended for image classification jobs in which a single label is assigned to the whole input image. On the other hand, traditional CNN architectures have problems with finer-grained tasks like semantic segmentation, in which each pixel of an image must be sorted into various classes or regions. Fully Convolutional Networks (FCNs) come into play here.
