@@ -47,3 +47,65 @@ This line creates a 2D convolutional layer using tf.keras.layers.Conv2D. It spec
 
 <img width="471" alt="image" src="https://github.com/mainak0907/Breast-Tumour-Segementation-UNet_Architecture/assets/88925745/498a102c-9362-4851-8b0d-12728a3b4bbc">
 
+### Concatenation in TensorFlow/Keras
+
+In the provided code, `tf.keras.layers.concatenate` is used to concatenate two tensors along a specified axis. Here's how it works:
+
+1. **Inputs**:
+   - The function takes a list of tensors as input. In this case, `[u6, c4]` are the tensors to be concatenated.
+
+2. **Dimensionality Check**:
+   - Before concatenating tensors, it's crucial to ensure they have the same dimensions along all axes except the concatenation axis. If the dimensions don't match, TensorFlow/Keras will raise an error.
+
+3. **Concatenation Axis**:
+   - You can specify the axis along which concatenation will occur. The default axis is `-1`, which corresponds to the last axis (typically the feature dimension in image data).
+   - In the provided code, the default axis is used, so the concatenation happens along the last axis.
+
+4. **Concatenation Operation**:
+   - Once the tensors' dimensions are verified and the concatenation axis is determined, TensorFlow performs the concatenation operation.
+   - It essentially stacks the tensors along the specified axis. For each dimension other than the concatenation axis, the resulting tensor's size is the sum of the sizes of the corresponding dimensions in the input tensors.
+
+5. **Output Tensor**:
+   - The output of `tf.keras.layers.concatenate` is a single tensor resulting from the concatenation operation.
+   - This tensor is then passed to the next layer in the neural network.
+
+Now, let's explain how concatenation works at the backend:
+
+- **Tensor Representation**:
+  - In TensorFlow/Keras, tensors are represented as multi-dimensional arrays.
+  - Each dimension represents a different feature or property of the data.
+
+- **Concatenation Algorithm**:
+  - TensorFlow's backend (usually based on C++ or CUDA) performs the concatenation operation efficiently using optimized algorithms.
+  - It iterates over the input tensors along the concatenation axis, copying their values into the appropriate locations in the output tensor.
+
+- **Memory Management**:
+  - TensorFlow manages memory allocation efficiently to store the concatenated tensor.
+  - It ensures that memory is allocated contiguously whenever possible to optimize memory access patterns.
+
+- **Parallelization and Optimization**:
+  - TensorFlow's backend may utilize parallel processing and optimization techniques to accelerate the concatenation operation, especially for large tensors or in distributed computing environments.
+
+In summary, `tf.keras.layers.concatenate` in TensorFlow/Keras efficiently concatenates tensors along a specified axis, allowing neural networks to combine information from different parts of the network architecture. This operation is fundamental for building complex neural network architectures such as U-Net.
+
+### Transposed Convolution
+
+```python
+u6 = tf.keras.layers.Conv2DTranspose(numFilters*8, (3, 3), strides=(2, 2), padding='same')(c5)
+```
+This line of code creates an upsampling layer (`u6`) using a transposed convolution operation. Let's break down the components:
+
+- `tf.keras.layers.Conv2DTranspose`: This function creates an upsampling layer using transposed convolution. Transposed convolution (also known as deconvolution) is used to upsample the feature maps. It involves padding the input tensor with zeros and then performing a convolution operation with learnable weights to expand the spatial dimensions of the feature maps.
+
+- `numFilters*8`: This parameter specifies the number of filters in the transposed convolution layer. In this case, it's `numFilters*8`, indicating that the number of filters in this layer is 8 times the number of filters used in the corresponding downsampling path.
+
+- `(3, 3)`: This parameter specifies the size of the convolution kernel. In this case, it's a 3x3 kernel.
+
+- `strides=(2, 2)`: This parameter specifies the stride of the convolution operation. In this case, it's `(2, 2)`, indicating that the convolution operation moves by 2 pixels in both the height and width dimensions. This results in an upsampling factor of 2.
+
+- `padding='same'`: This parameter specifies the padding strategy. `'same'` padding ensures that the output feature map has the same spatial dimensions as the input feature map by padding zeros to the input.
+
+- `(c5)`: This is the input to the transposed convolution layer. It represents the output feature map from the corresponding downsampling path (`c5` in this case).
+
+In summary, this line of code creates an upsampling layer that increases the spatial dimensions of the feature maps by a factor of 2 using transposed convolution. It takes the output feature map (`c5`) from the corresponding downsampling path and produces an upsampled feature map (`u6`).
+
