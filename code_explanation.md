@@ -109,3 +109,16 @@ This line of code creates an upsampling layer (`u6`) using a transposed convolut
 
 In summary, this line of code creates an upsampling layer that increases the spatial dimensions of the feature maps by a factor of 2 using transposed convolution. It takes the output feature map (`c5`) from the corresponding downsampling path and produces an upsampled feature map (`u6`).
 
+## The decision to increase the number of channels from 3 directly to 16, rather than to 6, before doubling, is often based on architectural considerations and empirical observations from training deep neural networks like UNet.
+
+Here are some reasons why this might be the case:
+
+1. **Capacity and Complexity**: Starting with a higher number of channels (such as 16) immediately allows the network to capture more complex features in the data. This can be particularly beneficial when dealing with tasks that require learning intricate patterns or when working with high-dimensional input data. Starting with a smaller number of channels might limit the model's ability to capture such complexity.
+
+2. **Efficiency**: Increasing the number of channels directly to 16 may be more efficient in terms of model capacity utilization. It provides a balance between computational efficiency and representational power. Incrementally increasing the number of channels from 3 to 6 before doubling might not provide significant advantages in terms of learning meaningful features, while requiring additional computational resources.
+
+3. **Empirical Observations**: Architectural choices in neural networks are often guided by empirical observations through experimentation. Researchers and practitioners might have found that directly increasing the number of channels to 16 leads to better performance or faster convergence during training compared to a gradual increase from 3 to 6 before doubling.
+
+4. **Consistency and Convention**: Certain architectural designs and conventions have emerged over time based on successful implementations and research findings. While it's always possible to experiment with alternative architectures, starting directly with 16 channels after the initial layer might be a common practice that has shown effectiveness in various tasks.
+
+Overall, the decision to increase the number of channels from 3 to 16 directly, rather than incrementally, is often a result of balancing model complexity, efficiency, empirical observations, and architectural conventions to achieve optimal performance in deep learning tasks.
