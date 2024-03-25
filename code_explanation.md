@@ -123,5 +123,7 @@ Here are some reasons why this might be the case:
 
 Overall, the decision to increase the number of channels from 3 to 16 directly, rather than incrementally, is often a result of balancing model complexity, efficiency, empirical observations, and architectural conventions to achieve optimal performance in deep learning tasks.
 
+## F1 Score
+
 <img width="498" alt="image" src="https://github.com/mainak0907/Breast-Tumour-Segementation-UNet_Architecture/assets/88925745/5d51e18c-bf49-40b7-8fb9-f8724148906e">
 
