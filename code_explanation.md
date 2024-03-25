@@ -122,3 +122,6 @@ Here are some reasons why this might be the case:
 4. **Consistency and Convention**: Certain architectural designs and conventions have emerged over time based on successful implementations and research findings. While it's always possible to experiment with alternative architectures, starting directly with 16 channels after the initial layer might be a common practice that has shown effectiveness in various tasks.
 
 Overall, the decision to increase the number of channels from 3 to 16 directly, rather than incrementally, is often a result of balancing model complexity, efficiency, empirical observations, and architectural conventions to achieve optimal performance in deep learning tasks.
+
+<img width="498" alt="image" src="https://github.com/mainak0907/Breast-Tumour-Segementation-UNet_Architecture/assets/88925745/5d51e18c-bf49-40b7-8fb9-f8724148906e">
+
