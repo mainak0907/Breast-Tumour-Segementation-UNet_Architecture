@@ -232,6 +232,8 @@ The Dice coefficient is a similarity statistic that calculates the overlap betwe
 
 The Dice coefficient loss is especially effective for unbalanced datasets in which the background class has many pixels. By penalizing false positives and false negatives, it promotes the network to divide both foreground and background regions accurately.
 
+Dice Coeffiecient = 2 TP /(2TP+FN+FP)
+
 ## Cross-Entropy Loss
 Use cross-entropy loss function in image segmentation tasks. It measures the dissimilarity between the predicted class probabilities and the ground truth labels. Treat each pixel as an independent classification problem in image segmentation, and the cross-entropy loss is computed pixel-wise.
 
