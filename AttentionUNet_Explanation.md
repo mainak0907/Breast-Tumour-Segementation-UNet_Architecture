@@ -13,10 +13,31 @@ Soft attention works by weighting different parts of the image. Areas of high re
 
 Due to the deterministic nature of soft attention, it remains differentiable and can be trained with standard backpropagation. As the model is trained, the weighting is also trained such that the model gets better at deciding which parts to pay attention to.
 
+<img width="451" alt="image" src="https://github.com/mainak0907/Breast-Tumour-Segementation-UNet_Architecture/assets/88925745/85f49a4b-9c76-42cf-a180-ee2121f67c32">
+
+
 ## Why is Attetion needed in UNet ?
 During upsampling in the expanding path, spatial information recreated is imprecise. To counteract this problem, the U-Net uses skip connections that combine spatial information from the downsampling path with the upsampling path. However, this brings across many redundant low-level feature extractions, as feature representation is poor in the initial layers.
 
 Soft attention implemented at the skip connections will actively suppress activations in irrelevant regions, reducing the number of redundant features brought across.
 
 <img width="542" alt="image" src="https://github.com/mainak0907/Breast-Tumour-Segementation-UNet_Architecture/assets/88925745/487c7935-4bc5-49a4-b683-3ee85d50bf74">
+
+## Diagram for UNet Attention 
+
+<img width="570" alt="image" src="https://github.com/mainak0907/Breast-Tumour-Segementation-UNet_Architecture/assets/88925745/5b0fddbb-5169-48c3-9e3c-ffc34785c96e">
+
+<img width="396" alt="image" src="https://github.com/mainak0907/Breast-Tumour-Segementation-UNet_Architecture/assets/88925745/f5ff7cc5-6618-4599-b19f-57e58431eff4">
+
+## Attention Gate 
+
+<img width="594" alt="image" src="https://github.com/mainak0907/Breast-Tumour-Segementation-UNet_Architecture/assets/88925745/18ce1f88-8016-42e2-951d-b48acd26d738">
+
+Alpha is the Attention Coefficient between 0 and 1.
+
+### Explanation 
+
+<img width="960" alt="image" src="https://github.com/mainak0907/Breast-Tumour-Segementation-UNet_Architecture/assets/88925745/d414e721-6d9d-466b-893d-b0161cc36a72">
+
+
 
