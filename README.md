@@ -52,6 +52,8 @@ A segmentation map, also known as a semantic segmentation map, is an image where
 
 ## Transposed Convolution 
 
+https://vigneshkumarkorakki.medium.com/mathematics-in-transposed-convolution-explained-vignesh-kumar-korakki-bf133c74958
+
 Transposed convolution, also known as fractionally strided convolution or deconvolution, is a technique used in convolutional neural networks (CNNs) for upsampling or increasing the spatial resolution of feature maps.
 
 In a traditional convolutional layer, we apply a filter/kernel to an input feature map to extract features. Transposed convolution works in the opposite direction – it increases the spatial resolution of the input by applying a kernel to it. This operation effectively "upsamples" the feature map.
